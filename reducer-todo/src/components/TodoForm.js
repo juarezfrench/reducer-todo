@@ -14,7 +14,7 @@ export default function TodoForm(props) {
           props.dispatch({ type: 'ADD_TODO', payload: props.todo });
           props.setTodo('');
         }}>
-        Submit
+        Add
       </button>
     </div>
   );
