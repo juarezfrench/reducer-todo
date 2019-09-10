@@ -10,9 +10,10 @@ export default function TodoForm(props) {
         onChange={e => props.setTodo(e.target.value)}
       />
       <button
-        onClick={() =>
-          props.dispatch({ type: 'ADD_TODO', payload: props.todo })
-        }>
+        onClick={() => {
+          props.dispatch({ type: 'ADD_TODO', payload: props.todo });
+          props.setTodo('');
+        }}>
         Submit
       </button>
     </div>
