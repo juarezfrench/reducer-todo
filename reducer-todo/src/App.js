@@ -14,7 +14,7 @@ function App() {
     <div className='App'>
       <h1>Reducer Todo App</h1>
       <TodoForm todo={todo} setTodo={setTodo} dispatch={dispatch} />
-      <TodoList state={state} />
+      <TodoList state={state} dispatch={dispatch} />
     </div>
   );
 }
