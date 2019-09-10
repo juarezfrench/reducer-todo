@@ -45,6 +45,11 @@ export default function Todo(props) {
         Do By: {dueDate.toDateString()}{' '}
         {Date.now() > Date.parse(dueDate) && 'Overdue!'}
       </p>
+      <p>
+        {props.todo.tags.map(tag => (
+          <span className='tag'>{tag}</span>
+        ))}
+      </p>
     </div>
   );
 }

@@ -3,13 +3,22 @@ export const initialState = [
     item: 'Learn about reducers',
     completed: false,
     id: 3892987589,
-    doBy: 'September 1, 2019',
+    doBy: 'September 10, 2019',
+    tags: ['Coding'],
   },
   {
     item: 'Finish todo list',
     completed: false,
     id: 1568146979433,
-    doBy: 'September 28, 2019',
+    doBy: 'September 10, 2019',
+    tags: ['Lambda'],
+  },
+  {
+    item: `Prepare for tomorrow's lecture`,
+    completed: false,
+    id: 1568152250811,
+    doBy: 'September 11, 2019',
+    tags: ['Lambda'],
   },
 ];
 
@@ -19,10 +28,11 @@ export const todoReducer = (state, action) => {
       return [
         ...state,
         {
-          item: action.payload,
+          item: action.payload.todo,
           completed: false,
           id: Date.now(),
           doBy: Date.now() + 604800000,
+          tags: [action.payload.tag],
         },
       ];
     case 'TOGGLE_TODO':

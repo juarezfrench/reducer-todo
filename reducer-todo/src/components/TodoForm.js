@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import Tags from './Tags';
 
 export default function TodoForm(props) {
+  const [todo, setTodo] = useState('');
+  const [tag, setTag] = useState('');
+
+  const handleSelect = e => {
+    setTag(e.target.value);
+  };
+
   return (
-    <div>
+    <div className='input-bar'>
       <input
         type='text'
-        value={props.todo}
+        value={todo}
         placeholder='...todo'
-        onChange={e => props.setTodo(e.target.value)}
+        onChange={e => setTodo(e.target.value)}
       />
+      <Tags handleSelect={handleSelect} />
       <button
         onClick={() => {
-          props.dispatch({ type: 'ADD_TODO', payload: props.todo });
-          props.setTodo('');
+          props.dispatch({
+            type: 'ADD_TODO',
+            payload: { todo: todo, tag: tag },
+          });
+          setTodo('');
         }}>
         Add
       </button>
