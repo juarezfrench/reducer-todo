@@ -24,6 +24,8 @@ export const todoReducer = (state, action) => {
           ? { ...todo, completed: !todo.completed }
           : todo;
       });
+    case 'CLEAR_COMPLETED':
+      return state.filter(todo => !todo.completed);
     default:
       return state;
   }
