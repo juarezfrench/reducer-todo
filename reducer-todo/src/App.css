@@ -61,8 +61,7 @@ select {
   height: 42px;
   background-color: #424242;
   color: white;
-  border-left: 4px solid #303030;
-  border-right: 4px solid #303030;
+  margin: 0 5px;
 }
 
 button {
