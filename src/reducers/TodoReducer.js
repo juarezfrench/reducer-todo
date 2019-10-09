@@ -2,9 +2,9 @@ import React from 'react'
 
 
   export const initialState = {
-    title: 'Learn about reducers',
-    id: 3892987589,
-    editing: false,
+    task: 'Reducer Here!',
+    id: 7767,
+    editing: true,
     completed: false
    
     
@@ -24,17 +24,18 @@ import React from 'react'
           completed: !state.completed
         };    
 
-      case 'SET_TITLE':
-        return {
-          ...state,
-          title: action.payload,
-          editing: false
-        };
+      // case 'SET_EDIT':
+      //   return {
+      //     ...state,
+      //     todoEdits: action.payload,
+      //     editing: false
+        // };
       case 'ADD_NEW_TODO':
         const newTodo = {
           name: action.payload,
-          id: Date.now(),
+          id:Date.now(),
           completed: false
+         
         };
         return {
           ...state,
